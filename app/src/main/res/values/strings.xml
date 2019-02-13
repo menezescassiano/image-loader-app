@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">Image Loader Application</string>
+    <string name="alert_dialog_title">Something went wrong</string>
+    <string name="alert_dialog_text">Please try again later.</string>
+</resources>

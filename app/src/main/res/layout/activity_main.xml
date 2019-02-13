@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        tools:ignore="UselessParent,ContentDescription,RelativeOverlap">
+
+    <data>
+
+        <import type="android.view.View" />
+
+        <import type="com.cassianomenezes.imageloaderapplication.R" />
+
+        <variable
+                name="viewModel"
+                type="com.cassianomenezes.imageloaderapplication.viewmodel.MainViewModel" />
+    </data>
+
+    <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+        <ImageView
+                android:id="@+id/imageView"
+                android:layout_width="300dp"
+                android:layout_height="300dp"
+                android:layout_centerInParent="true"
+                android:src="@{viewModel.image}"
+                tools:src="@drawable/ic_dog"/>
+        <ProgressBar
+                android:layout_width="300dp"
+                android:layout_height="300dp"
+                android:visibility="@{viewModel.running ? View.VISIBLE : View.GONE}"
+                android:indeterminateDrawable="@drawable/custom_progress"
+                android:layout_centerInParent="true"/>
+        <Button
+                android:layout_below="@id/imageView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:onClick="@{() -> viewModel.next()}"
+                android:text="Next"/>
+    </RelativeLayout>
+
+</layout>
